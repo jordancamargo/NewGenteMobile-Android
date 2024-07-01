@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">New Gen.te Mobile</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="manter_conectado">Manter conectado</string>
+    <string name="esqueceu_senha">Esqueceu a senha?</string>
+    <string name="primeiro_acesso">Primeiro acesso?</string>
+    <string name="entrar">Entrar</string>
+    <string name="marcacao_ponto">Ponto</string>
+    <string name="organograma">Organograma</string>
+    <string name="recibo">Recibo</string>
+</resources>
