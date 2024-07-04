@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
@@ -33,6 +34,7 @@ fun AnimacaoBordaCard(
     shape: Shape = RoundedCornerShape(size = 0.dp),
     borderWidth: Dp = 4.dp,
     gradient: Brush = Brush.sweepGradient(listOf(Blue500, Blue200)),
+    colorContainer: Color,
     animatonDuration: Int = 10000,
     content: @Composable () -> Unit
     ) {
@@ -64,7 +66,7 @@ fun AnimacaoBordaCard(
                     }
                     drawContent()
                 },
-            color = Blue700,
+            color = colorContainer,
             shape = shape
         ) {
             content()
@@ -78,6 +80,7 @@ private fun AnimacaoBordaCardPreview() {
     AnimacaoBordaCard (
         modifier = Modifier.height(200.dp).fillMaxSize(),
         shape = RoundedCornerShape(30.dp),
+        colorContainer = Blue700,
         borderWidth = 4.dp,
         gradient = Brush.sweepGradient(
             listOf(

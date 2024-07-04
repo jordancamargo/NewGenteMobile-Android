@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import br.com.lg.MyWay.newgentemobile.R
 import br.com.lg.MyWay.newgentemobile.ui.theme.Blue200
 import br.com.lg.MyWay.newgentemobile.ui.theme.Blue500
+import br.com.lg.MyWay.newgentemobile.ui.theme.Blue700
 import br.com.lg.MyWay.newgentemobile.ui.theme.Blue900
 
 @Composable
@@ -92,6 +93,7 @@ fun LoginCamposAutenticacao() {
                 .fillMaxWidth()
                 .padding(all = 24.dp),
             shape = RoundedCornerShape(8.dp),
+            colorContainer = Blue700,
             gradient = Brush.sweepGradient(listOf(Blue500, Blue200))
         ) {
             Column (
@@ -104,6 +106,8 @@ fun LoginCamposAutenticacao() {
                     onValueChange = {
                                     email = it
                     },
+                    containerColor = Blue900,
+                    cursorColor = Color.White,
                     hint = stringResource(R.string.email),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Email
@@ -111,6 +115,7 @@ fun LoginCamposAutenticacao() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(0.dp, 10.dp),
+                    icon = R.drawable.icon_pessoa,
                     iconContentDescription = "Icone Pessoa"
                 )
                 TextFieldCustomizado(
@@ -118,6 +123,8 @@ fun LoginCamposAutenticacao() {
                     onValueChange = {
                                     senha = it
                     },
+                    containerColor = Blue900,
+                    cursorColor = Color.White,
                     hint = stringResource(R.string.senha),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password
@@ -215,6 +222,7 @@ fun LoginCamposAutenticacao() {
                 .fillMaxWidth()
                 .padding(all = 24.dp),
             shape = RoundedCornerShape(8.dp),
+            colorContainer = Blue700,
             gradient = Brush.sweepGradient(listOf(Blue500, Blue200))
         ) {
             Row(

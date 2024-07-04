@@ -27,9 +27,11 @@ fun TextFieldCustomizado(
     value: String,
     onValueChange: (String) -> Unit,
     hint: String,
+    containerColor: Color,
+    cursorColor: Color,
     modifier: Modifier = Modifier,
     keyboardOptions: KeyboardOptions = KeyboardOptions(),
-    icon: Int = R.drawable.icon_pessoa,
+    icon: Int? = null,
     iconContentDescription: String? = null,
     isPassword: Boolean = false
 ) {
@@ -38,26 +40,28 @@ fun TextFieldCustomizado(
         onValueChange,
         modifier,
         label = {
-            Text(text = hint, color = Color.White)
+            Text(text = hint, color = cursorColor)
         },
         colors = TextFieldDefaults.textFieldColors(
-            containerColor = Blue900,
-            cursorColor = Color.White
+            containerColor = containerColor,
+            cursorColor = cursorColor
         ),
         maxLines = 1,
         textStyle = TextStyle(
-            color = Color.White,
+            color = cursorColor,
             fontSize = 18.sp
         ),
         keyboardOptions = keyboardOptions,
         visualTransformation = if (isPassword) PasswordVisualTransformation() else androidx.compose.ui.text.input.VisualTransformation.None,
-        leadingIcon = {
-            Icon(
-                painter = painterResource(id = icon),
-                contentDescription = iconContentDescription,
-                tint = Color.White
-            )
-        }
+        leadingIcon = if(icon != null ){
+            {
+                Icon(
+                    painter = painterResource(id = icon!!),
+                    contentDescription = iconContentDescription,
+                    tint = cursorColor
+                )
+            }
+        } else null
     )
 }
 
@@ -73,6 +77,8 @@ private fun TextFieldCustomizadoPreview() {
         onValueChange = {
             email = it
         },
+        containerColor = Blue900,
+        cursorColor = Color.White,
         hint = "Email",
         icon = R.drawable.icon_pessoa,
         iconContentDescription = "Icone Pessoa"
